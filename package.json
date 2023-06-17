@@ -1,6 +1,8 @@
 {
   "name": "@deep-foundation/logger",
-  "keywords": [],
+  "keywords": [
+    "deep-package"
+  ],
   "version": "0.0.1",
   "description": "",
   "repository": {
@@ -18,6 +20,7 @@
     "/dist",
     "./deep.json"
   ],
+  "version": "1.0.0",
   "dependencies": {
     "@deep-foundation/core": "^0.0.2"
   },
