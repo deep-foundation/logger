@@ -6,9 +6,10 @@ import { MutationInputLink } from '@deep-foundation/deeplinks/imports/client_typ
  * Inserts a handle and contain it if {@link InsertHandleParam.containerLinkId} is not null 
  * 
  * @example
+ * #### Insert a handle link
 await insertHandle({
    deep,
-   handle: Handle.Insert,
+   handle: Handle.Insert \/\* Handle.Update, Handle.Delete \*\/,
    triggerTypeLinkId: await deep.id(deep.linkId, "MyType"),
    containerLinkId: deep.linkId
 })
