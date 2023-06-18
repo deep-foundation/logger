@@ -2,6 +2,17 @@ import { DeepClient } from '@deep-foundation/deeplinks/imports/client';
 import { Handle } from './handle';
 import { MutationInputLink } from '@deep-foundation/deeplinks/imports/client_types';
 
+/**
+ * Inserts a handle and contain it if {@link InsertHandleParam.containerLinkId} is not null 
+ * 
+ * @example
+await insertHandle({
+   deep,
+   handle: Handle.Insert,
+   triggerTypeLinkId: await deep.id(deep.linkId, "MyType"),
+   containerLinkId: deep.linkId
+})
+ */
 export async function insertHandle(param: InsertHandleParam) {
   const { deep, handle, triggerTypeLinkId, containerLinkId } = param;
 
@@ -26,8 +37,22 @@ export async function insertHandle(param: InsertHandleParam) {
 }
 
 export interface InsertHandleParam {
+  /**
+   * DeepClient instance
+   */
   deep: DeepClient;
+  /**
+   * Type of Handle
+   */
   handle: Handle;
+  /**
+   * Link id that will be handled
+   */
   triggerTypeLinkId: number;
+  /**
+   * Link id of container
+   * 
+   * @defaultValue {@link InsertHandleParam.deep.linkId} if undefined
+   */
   containerLinkId?: number | null;
 }
