@@ -74,3 +74,27 @@ Insert a link of type `Handle(Insert|Update|Delete)` from your type that should 
   });
   
   ```
+
+## Result
+### Insert
+- LogInsert with string value that contains timestamp in milliseconds
+- LogId from LogInsert to newLink.link
+- LogType from LogINsert to newLink.type
+- LogFrom from LogInsert to newLink.from
+- LogTo from LogInsert to newLink.to
+
+### Update
+- LogInsert with string value that contains timestamp in milliseconds
+- LogId from LogInsert to newLink.link
+- LogType from LogINsert to newLink.type
+- LogFrom from LogInsert to newLink.from
+- LogTo from LogInsert to newLink.to
+- Log(String|Number|Object) from LogUpdate to LogUpdate with string|number|object
+
+### Delete
+- LogInsert with string value that contains timestamp in milliseconds
+- LogId from LogInsert to newLink.link
+- LogType from LogINsert to newLink.type
+- LogFrom from LogInsert to newLink.from
+- LogTo from LogInsert to newLink.to
+- Log(String|Number|Object) from LogUpdate to LogUpdate with string|number|object
