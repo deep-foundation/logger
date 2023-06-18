@@ -7,12 +7,14 @@ import { MutationInputLink } from '@deep-foundation/deeplinks/imports/client_typ
  * 
  * @example
  * #### Insert a handle link
+```ts
 await insertHandle({
    deep,
    handle: Handle.Insert \/\* Handle.Update, Handle.Delete \*\/,
    triggerTypeLinkId: await deep.id(deep.linkId, "MyType"),
    containerLinkId: deep.linkId
 })
+```
  */
 export async function insertHandle(param: InsertHandleParam) {
   const { deep, handle, triggerTypeLinkId, containerLinkId } = param;
