@@ -4,6 +4,9 @@
 
 Deep package that provides handlers for insert/update/delete operations
 
+# Prerequisitions
+- Give permissions
+
 # Usage
 Insert a link of type `Handle(Insert|Update|Delete)` from your type that should be handled to the accroding handler `(Insert|Update|Delete)Handler` from this package
 
