@@ -22,7 +22,7 @@ export async function insertHandle(param: InsertHandleParam) {
     },
   };
 
-  await deep.insert(insertData);
+  return await deep.insert(insertData);
 }
 
 export interface InsertHandleParam {
