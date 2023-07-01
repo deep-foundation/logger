@@ -4,6 +4,8 @@
 
 Deep package that provides handlers for insert/update/delete operations
 
+[**Documentation**](https://deep-foundation.github.io/logger/index.html)
+
 # Prerequisitions
 - Give permissions
 
