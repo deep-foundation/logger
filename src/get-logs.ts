@@ -1,5 +1,4 @@
 import { DeepClient } from "@deep-foundation/deeplinks/imports/client";
-import { deepEqual } from "assert";
 import { Package } from "./package";
 
 export async function getLogs(options: GetLogsOptions) {
