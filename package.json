@@ -4,7 +4,7 @@
     "deep-package"
   ],
   "version": "1.2.0",
-  "description": "A deep package that provides handlers to log insert/update/delete operations",
+  "description": "A deep package to log insert/update/delete operations",
   "repository": {
     "type": "git",
     "url": "https://github.com/deep-foundation/logger"
