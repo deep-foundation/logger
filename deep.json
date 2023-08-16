@@ -1,34 +1,34 @@
 {
   "package": {
     "name": "@deep-foundation/logger",
-    "version": "1.1.0"
+    "version": "1.2.0"
   },
   "data": [
     {
       "package": {
         "dependencyId": 0,
-        "containValue": "Handler"
+        "containValue": "Tree"
       },
       "id": 1
     },
     {
       "package": {
         "dependencyId": 0,
-        "containValue": "plv8SupportsJs"
+        "containValue": "TreeIncludeNode"
       },
       "id": 2
     },
     {
       "package": {
         "dependencyId": 0,
-        "containValue": "Type"
+        "containValue": "Any"
       },
       "id": 3
     },
     {
       "package": {
         "dependencyId": 0,
-        "containValue": "Any"
+        "containValue": "Type"
       },
       "id": 4
     },
@@ -49,63 +49,67 @@
     {
       "package": {
         "dependencyId": 0,
-        "containValue": "Object"
+        "containValue": "TreeIncludeFromCurrent"
       },
       "id": 7
     },
     {
       "package": {
         "dependencyId": 0,
-        "containValue": "TreeIncludeDown"
+        "containValue": "Object"
       },
       "id": 8
     },
     {
       "package": {
         "dependencyId": 0,
-        "containValue": "Number"
+        "containValue": "TreeIncludeDown"
       },
       "id": 9
     },
     {
       "package": {
         "dependencyId": 0,
-        "containValue": "SyncTextFile"
+        "containValue": "Number"
       },
       "id": 10
     },
     {
       "package": {
         "dependencyId": 0,
-        "containValue": "Tree"
+        "containValue": "SyncTextFile"
       },
       "id": 11
     },
     {
       "package": {
         "dependencyId": 0,
-        "containValue": "TreeIncludeFromCurrent"
+        "containValue": "Handler"
       },
       "id": 12
     },
     {
       "package": {
         "dependencyId": 0,
-        "containValue": "TreeIncludeNode"
+        "containValue": "plv8SupportsJs"
       },
       "id": 13
     },
     {
-      "id": "InsertHandler",
-      "type": 1,
-      "from": 2,
-      "to": "InsertHandlerCode"
+      "id": "LogTree",
+      "type": 1
+    },
+    {
+      "id": "TreeIncludeNodeAny",
+      "type": 2,
+      "from": "LogTree",
+      "to": 3
     },
     {
       "id": "LogString",
-      "type": 3,
-      "from": 4,
-      "to": 4
+      "type": 4,
+      "from": 3,
+      "to": 3
     },
     {
       "id": "LogStringValueType",
@@ -114,173 +118,175 @@
       "to": 6
     },
     {
+      "id": "LogTreeTreeIncludeFromCurrentLogString",
+      "type": 7,
+      "from": "LogTree",
+      "to": "LogString"
+    },
+    {
       "id": "LogObject",
-      "type": 3,
-      "from": 4,
-      "to": 4
+      "type": 4,
+      "from": 3,
+      "to": 3
     },
     {
       "id": "LogObjectValueType",
       "type": 5,
       "from": "LogObject",
-      "to": 7
+      "to": 8
+    },
+    {
+      "id": "LogTreeTreeIncludeDownLogObjectLink",
+      "type": 7,
+      "from": "LogTree",
+      "to": "LogObject"
     },
     {
       "id": "LogTo",
-      "type": 3,
-      "from": 4,
-      "to": 4
+      "type": 4,
+      "from": 3,
+      "to": 3
+    },
+    {
+      "id": "LogTreeTreeIncludeDownLogTo",
+      "type": 9,
+      "from": "LogTree",
+      "to": "LogTo"
     },
     {
       "id": "LogFrom",
-      "type": 3,
-      "from": 4,
-      "to": 4
+      "type": 4,
+      "from": 3,
+      "to": 3
+    },
+    {
+      "id": "LogTreeTreeIncludeDownLogFrom",
+      "type": 9,
+      "from": "LogTree",
+      "to": "LogFrom"
     },
     {
       "id": "LogAuthor",
-      "type": 3,
-      "from": 4,
-      "to": 4
+      "type": 4,
+      "from": 3,
+      "to": 3
+    },
+    {
+      "id": "LogTreeTreeIncludeDownLogAuthor",
+      "type": 9,
+      "from": "LogTree",
+      "to": "LogAuthor"
     },
     {
       "id": "LogType",
-      "type": 3,
-      "from": 4,
-      "to": 4
+      "type": 4,
+      "from": 3,
+      "to": 3
     },
     {
-      "id": "LogTreeTreeIncludeDownLogId",
-      "type": 8,
+      "id": "LogTreeTreeIncludeDownLogType",
+      "type": 9,
       "from": "LogTree",
-      "to": "LogId"
-    },
-    {
-      "id": "LogId",
-      "type": 3,
-      "from": 4,
-      "to": 4
+      "to": "LogType"
     },
     {
       "id": "LogDelete",
-      "type": 3
+      "type": 4
+    },
+    {
+      "id": "LogTreeIncludeNodeLogDelete",
+      "type": 2,
+      "from": "LogTree",
+      "to": "LogDelete"
     },
     {
       "id": "LogUpdate",
-      "type": 3
+      "type": 4
+    },
+    {
+      "id": "LogTreeIncludeNodeLogUpdate",
+      "type": 2,
+      "from": "LogTree",
+      "to": "LogUpdate"
     },
     {
       "id": "LogNumber",
-      "type": 3,
-      "from": 4,
-      "to": 4
+      "type": 4,
+      "from": 3,
+      "to": 3
     },
     {
       "id": "LogNumberValueType",
       "type": 5,
       "from": "LogNumber",
-      "to": 9
+      "to": 10
+    },
+    {
+      "id": "LogTreeTreeIncludeFromCurrentLogNumber",
+      "type": 7,
+      "from": "LogTree",
+      "to": "LogNumber"
     },
     {
       "id": "LogInsert",
-      "type": 3
+      "type": 4
+    },
+    {
+      "id": "LogTreeIncludeNodeLogInsert",
+      "type": 2,
+      "from": "LogTree",
+      "to": "LogInsert"
+    },
+    {
+      "id": "LogId",
+      "type": 4,
+      "from": 3,
+      "to": 3
+    },
+    {
+      "id": "LogTreeTreeIncludeDownLogId",
+      "type": 9,
+      "from": "LogTree",
+      "to": "LogId"
     },
     {
       "id": "InsertHandlerCode",
-      "type": 10,
+      "type": 11,
       "value": {
         "value": "({ deep, data: { newLink, triggeredByLinkId } }) => {\n   const timestamp = Date.now();\n \n   const containTypeLinkId = deep.id('@deep-foundation/core', 'Contain');\n \n   const logInsertInsertData = {\n     type_id: deep.id(\"@deep-foundation/logger\", \"LogInsert\"),\n     number: timestamp,\n   };\n   const { data: [{ id: logInsertLinkId }] } = deep.insert(logInsertInsertData);\n   deep.insert({\n     type_id: containTypeLinkId,\n     from_id: triggeredByLinkId,\n     to_id: logInsertLinkId\n   })\n \n   const logIdInsertData = {\n     type_id: deep.id(\"@deep-foundation/logger\", \"LogId\"),\n     from_id: logInsertLinkId,\n     to_id: newLink.id,\n    //  number: newLink.id,\n     in: {\n       data: {\n         type_id: containTypeLinkId,\n         from_id: logInsertLinkId,\n       },\n     },\n   };\n   const { data: [{ id: logIdLinkId }] } = deep.insert(logIdInsertData);\n   deep.insert(logIdInsertData);\n   deep.insert({\n     type_id: containTypeLinkId,\n     from_id: logInsertLinkId,\n     to_id: logIdLinkId\n   })\n \n   const logTypeInsertData = {\n     type_id: deep.id(\"@deep-foundation/logger\", \"LogType\"),\n     from_id: logInsertLinkId,\n     to_id: newLink.type_id,\n   };\n   const { data: [{ id: logTypeLinkId }] } = deep.insert(logTypeInsertData);\n   deep.insert(logIdInsertData);\n   deep.insert({\n     type_id: containTypeLinkId,\n     from_id: logInsertLinkId,\n     to_id: logTypeLinkId\n   })\n \n   if (newLink.from_id !== 0 && newLink.to_id !== 0) {\n     const logFromInsertData = {\n       type_id: deep.id(\"@deep-foundation/logger\", \"LogFrom\"),\n       from_id: logInsertLinkId,\n       to_id: newLink.from_id,\n       in: {\n         data: {\n           type_id: containTypeLinkId,\n           from_id: logInsertLinkId,\n         },\n       },\n     };\n     const { data: [{ id: logFromLinkId }] } = deep.insert(logFromInsertData)\n     deep.insert(logIdInsertData);\n     deep.insert({\n       type_id: containTypeLinkId,\n       from_id: logInsertLinkId,\n       to_id: logFromLinkId\n     })\n \n     const logToInsertData = {\n       type_id: deep.id(\"@deep-foundation/logger\", \"LogTo\"),\n       from_id: logInsertLinkId,\n       to_id: newLink.to_id,\n       in: {\n         data: {\n           type_id: containTypeLinkId,\n           from_id: logInsertLinkId,\n         },\n       },\n     };\n     const { data: [{ id: logToLinkId }] } = deep.insert(logToInsertData)\n     deep.insert(logIdInsertData);\n     deep.insert({\n       type_id: containTypeLinkId,\n       from_id: logInsertLinkId,\n       to_id: logToLinkId\n     })\n   }\n \n   const logAuthorLinkInsertData = {\n     type_id: deep.id(\"@deep-foundation/logger\", \"LogAuthor\"),\n     from_id: logInsertLinkId,\n     to_id: triggeredByLinkId,\n     in: {\n       data: {\n         type_id: containTypeLinkId,\n         from_id: logInsertLinkId,\n       },\n     },\n   };\n   const { data: [{ id: logAuthorLinkId }] } = deep.insert(logAuthorLinkInsertData)\n   deep.insert(logIdInsertData);\n   deep.insert({\n     type_id: containTypeLinkId,\n     from_id: logInsertLinkId,\n     to_id: logAuthorLinkId\n   })\n }"
       }
     },
     {
+      "id": "InsertHandler",
+      "type": 12,
+      "from": 13,
+      "to": "InsertHandlerCode"
+    },
+    {
       "id": "DeleteHandlerCode",
-      "type": 10,
+      "type": 11,
       "value": {
         "value": "({ deep, data: { oldLink, triggeredByLinkId } }) => {\n  const timestamp = Date.now();\n\n  const containTypeLinkId = deep.id('@deep-foundation/core', 'Contain');\n\n  const logDeleteInsertData = {\n    type_id: deep.id('@deep-foundation/logger', 'LogDelete'),\n    number: timestamp,\n  };\n  const {\n    data: [{ id: logDeleteLinkId }],\n  } = deep.insert(logDeleteInsertData);\n  deep.insert({\n    type_id: containTypeLinkId,\n    from_id: triggeredByLinkId,\n    to_id: logDeleteLinkId,\n  });\n\n  const logIdInsertData = {\n    type_id: deep.id('@deep-foundation/logger', 'LogId'),\n    from_id: logDeleteLinkId,\n    to_id: oldLink.id,\n    // number: timestamp,\n    in: {\n      data: {\n        type_id: containTypeLinkId,\n        from_id: logDeleteLinkId,\n      },\n    },\n  };\n  const {\n    data: [{ id: logIdLinkId }],\n  } = deep.insert(logIdInsertData);\n  deep.insert(logIdInsertData);\n  deep.insert({\n    type_id: containTypeLinkId,\n    from_id: logDeleteLinkId,\n    to_id: logIdLinkId,\n  });\n\n  const logTypeInsertData = {\n    type_id: deep.id('@deep-foundation/logger', 'LogType'),\n    from_id: logDeleteLinkId,\n    to_id: oldLink.type_id,\n    in: {\n      data: {\n        type_id: containTypeLinkId,\n        from_id: logDeleteLinkId,\n      },\n    },\n  };\n  const {\n    data: [{ id: logTypeLinkId }],\n  } = deep.insert(logTypeInsertData);\n  deep.insert(logIdInsertData);\n  deep.insert({\n    type_id: containTypeLinkId,\n    from_id: logDeleteLinkId,\n    to_id: logTypeLinkId,\n  });\n\n  if (oldLink.from_id != 0 && oldLink.to_id != 0) {\n    const logFromInsertData = {\n      type_id: deep.id('@deep-foundation/logger', 'LogFrom'),\n      from_id: logDeleteLinkId,\n      to_id: oldLink.from_id,\n      in: {\n        data: {\n          type_id: containTypeLinkId,\n          from_id: logDeleteLinkId,\n        },\n      },\n    };\n    const {\n      data: [{ id: logFromLinkId }],\n    } = deep.insert(logFromInsertData);\n    deep.insert(logIdInsertData);\n    deep.insert({\n      type_id: containTypeLinkId,\n      from_id: logDeleteLinkId,\n      to_id: logFromLinkId,\n    });\n\n    const logToInsertData = {\n      type_id: deep.id('@deep-foundation/logger', 'LogTo'),\n      from_id: logDeleteLinkId,\n      to_id: oldLink.to_id,\n      in: {\n        data: {\n          type_id: containTypeLinkId,\n          from_id: logDeleteLinkId,\n        },\n      },\n    };\n    const {\n      data: [{ id: logToLinkId }],\n    } = deep.insert(logToInsertData);\n    deep.insert(logIdInsertData);\n    deep.insert({\n      type_id: containTypeLinkId,\n      from_id: logDeleteLinkId,\n      to_id: logToLinkId,\n    });\n  }\n\n  if (oldLink.value?.value) {\n    const typeOfValue = typeof oldLink.value.value;\n    const logValueLinkInsertData = {\n      type_id: deep.id(\n        '@deep-foundation/logger',\n        `Log${typeOfValue.charAt(0).toUpperCase() + typeOfValue.slice(1)}`\n      ),\n      from_id: logDeleteLinkId,\n      to_id: logDeleteLinkId,\n      [typeOfValue]: oldLink.value.value,\n      in: {\n        data: {\n          type_id: containTypeLinkId,\n          from_id: logDeleteLinkId,\n        },\n      },\n    };\n    const {\n      data: [{ id: logValueLinkId }],\n    } = deep.insert(logValueLinkInsertData);\n    deep.insert(logIdInsertData);\n    deep.insert({\n      type_id: containTypeLinkId,\n      from_id: logDeleteLinkId,\n      to_id: logValueLinkId,\n    });\n  }\n\n  const logAuthorLinkInsertData = {\n    type_id: deep.id('@deep-foundation/logger', 'LogAuthor'),\n    from_id: logDeleteLinkId,\n    to_id: triggeredByLinkId,\n    in: {\n      data: {\n        type_id: containTypeLinkId,\n        from_id: logDeleteLinkId,\n      },\n    },\n  };\n  const {\n    data: [{ id: logAuthorLinkId }],\n  } = deep.insert(logAuthorLinkInsertData);\n  deep.insert(logIdInsertData);\n  deep.insert({\n    type_id: containTypeLinkId,\n    from_id: logDeleteLinkId,\n    to_id: logAuthorLinkId,\n  });\n};\n"
       }
     },
     {
       "id": "DeleteHandler",
-      "type": 1,
-      "from": 2,
+      "type": 12,
+      "from": 13,
       "to": "DeleteHandlerCode"
     },
     {
       "id": "UpdateHandlerCode",
-      "type": 10,
+      "type": 11,
       "value": {
         "value": "({ deep, data: { newLink, triggeredByLinkId } }) => {\n  const timestamp = Date.now();\n\n  const containTypeLinkId = deep.id('@deep-foundation/core', 'Contain');\n\n  const logUpdateInsertData = {\n    type_id: deep.id('@deep-foundation/logger', 'LogUpdate'),\n    number: timestamp,\n  };\n  const {\n    data: [{ id: logUpdateLinkId }],\n  } = deep.insert(logUpdateInsertData);\n  deep.insert({\n    type_id: containTypeLinkId,\n    from_id: triggeredByLinkId,\n    to_id: logUpdateLinkId,\n  });\n\n  const logIdInsertData = {\n    type_id: deep.id('@deep-foundation/logger', 'LogId'),\n    from_id: logUpdateLinkId,\n    to_id: newLink.id,\n    // number: timestamp,\n    in: {\n      data: {\n        type_id: containTypeLinkId,\n        from_id: logUpdateLinkId,\n      },\n    },\n  };\n  const {\n    data: [{ id: logIdLinkId }],\n  } = deep.insert(logIdInsertData);\n  deep.insert(logIdInsertData);\n  deep.insert({\n    type_id: containTypeLinkId,\n    from_id: logUpdateLinkId,\n    to_id: logIdLinkId,\n  });\n\n  const logTypeInsertData = {\n    type_id: deep.id('@deep-foundation/logger', 'LogType'),\n    from_id: logUpdateLinkId,\n    to_id: newLink.type_id,\n    in: {\n      data: {\n        type_id: containTypeLinkId,\n        from_id: logUpdateLinkId,\n      },\n    },\n  };\n  const {\n    data: [{ id: logTypeLinkId }],\n  } = deep.insert(logTypeInsertData);\n  deep.insert(logIdInsertData);\n  deep.insert({\n    type_id: containTypeLinkId,\n    from_id: logUpdateLinkId,\n    to_id: logTypeLinkId,\n  });\n\n  if (newLink.from_id != 0 && newLink.to_id != 0) {\n    const logFromInsertData = {\n      type_id: deep.id('@deep-foundation/logger', 'LogFrom'),\n      from_id: logUpdateLinkId,\n      to_id: newLink.from_id,\n      in: {\n        data: {\n          type_id: containTypeLinkId,\n          from_id: logUpdateLinkId,\n        },\n      },\n    };\n    const {\n      data: [{ id: logFromLinkId }],\n    } = deep.insert(logFromInsertData);\n    deep.insert(logIdInsertData);\n    deep.insert({\n      type_id: containTypeLinkId,\n      from_id: logUpdateLinkId,\n      to_id: logFromLinkId,\n    });\n\n    const logToInsertData = {\n      type_id: deep.id('@deep-foundation/logger', 'LogTo'),\n      from_id: logUpdateLinkId,\n      to_id: newLink.to_id,\n      in: {\n        data: {\n          type_id: containTypeLinkId,\n          from_id: logUpdateLinkId,\n        },\n      },\n    };\n    const {\n      data: [{ id: logToLinkId }],\n    } = deep.insert(logToInsertData);\n    deep.insert(logIdInsertData);\n    deep.insert({\n      type_id: containTypeLinkId,\n      from_id: logUpdateLinkId,\n      to_id: logToLinkId,\n    });\n  }\n\n  const typeOfValue = typeof newLink.value.value;\n  const logValueLinkInsertData = {\n    type_id: deep.id(\n      '@deep-foundation/logger',\n      `Log${typeOfValue.charAt(0).toUpperCase() + typeOfValue.slice(1)}`\n    ),\n    from_id: logUpdateLinkId,\n    to_id: logUpdateLinkId,\n    [typeOfValue]: newLink.value.value,\n    in: {\n      data: {\n        type_id: containTypeLinkId,\n        from_id: logUpdateLinkId,\n      },\n    },\n  };\n  const {\n    data: [{ id: logValueLinkId }],\n  } = deep.insert(logValueLinkInsertData);\n  deep.insert(logIdInsertData);\n  deep.insert({\n    type_id: containTypeLinkId,\n    from_id: logUpdateLinkId,\n    to_id: logValueLinkId,\n  });\n\n  const logAuthorLinkInsertData = {\n    type_id: deep.id('@deep-foundation/logger', 'LogAuthor'),\n    from_id: logUpdateLinkId,\n    to_id: triggeredByLinkId,\n    in: {\n      data: {\n        type_id: containTypeLinkId,\n        from_id: logUpdateLinkId,\n      },\n    },\n  };\n  const {\n    data: [{ id: logAuthorLinkId }],\n  } = deep.insert(logAuthorLinkInsertData);\n  deep.insert(logIdInsertData);\n  deep.insert({\n    type_id: containTypeLinkId,\n    from_id: logUpdateLinkId,\n    to_id: logAuthorLinkId,\n  });\n};\n"
       }
     },
     {
       "id": "UpdateHandler",
-      "type": 1,
-      "from": 2,
+      "type": 12,
+      "from": 13,
       "to": "UpdateHandlerCode"
-    },
-    {
-      "id": "LogTree",
-      "type": 11
-    },
-    {
-      "id": "LogTreeTreeIncludeFromCurrentLogString",
-      "type": 12,
-      "from": "LogTree",
-      "to": "LogString"
-    },
-    {
-      "id": "LogTreeTreeIncludeDownLogInsertLink",
-      "type": 12,
-      "from": "LogTree",
-      "to": "LogObject"
-    },
-    {
-      "id": "LogTreeTreeIncludeDownLogTo",
-      "type": 8,
-      "from": "LogTree",
-      "to": "LogTo"
-    },
-    {
-      "id": "LogTreeTreeIncludeDownLogFrom",
-      "type": 8,
-      "from": "LogTree",
-      "to": "LogFrom"
-    },
-    {
-      "id": "LogTreeTreeIncludeDownLogAuthor",
-      "type": 8,
-      "from": "LogTree",
-      "to": "LogAuthor"
-    },
-    {
-      "id": "LogTreeTreeIncludeDownLogType",
-      "type": 8,
-      "from": "LogTree",
-      "to": "LogType"
-    },
-    {
-      "id": "LogTreeIncludeNodeLogDelete",
-      "type": 13,
-      "from": "LogTree",
-      "to": "LogDelete"
-    },
-    {
-      "id": "LogTreeIncludeNodeLogUpdate",
-      "type": 13,
-      "from": "LogTree",
-      "to": "LogUpdate"
-    },
-    {
-      "id": "LogTreeTreeIncludeFromCurrentLogNumber",
-      "type": 12,
-      "from": "LogTree",
-      "to": "LogNumber"
-    },
-    {
-      "id": "LogTreeIncludeNodeLogInsert",
-      "type": 13,
-      "from": "LogTree",
-      "to": "LogInsert"
     }
   ],
   "errors": [],
