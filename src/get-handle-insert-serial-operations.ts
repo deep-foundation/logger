@@ -23,18 +23,6 @@ export async function getHandleInsertSerialOperations(
     containValue,
   } = param;
 
-  if (!deep) {
-    throw new Error(`DeepClient is required`);
-  }
-
-  if (!triggerTypeLinkId) {
-    throw new Error(`Trigger type link id is required`);
-  }
-
-  if (!containerLinkId) {
-    throw new Error(`Container link id is required`);
-  }
-
   let linkIds = param.linkIds;
   if (!linkIds) {
     const reservedLinkIds = await deep.reserve(2);
