@@ -2,7 +2,7 @@
 [![Gitpod](https://img.shields.io/badge/Gitpod-ready--to--code-blue?logo=gitpod)](https://gitpod.io/#https://github.com/deep-foundation/logger) 
 [![Discord](https://badgen.net/badge/icon/discord?icon=discord&label&color=purple)](https://discord.gg/deep-foundation)
 
-Deep package that provides handlers for insert/update/delete operations
+A deep package that provides handlers to log insert/update/delete operations
 
 [**Documentation**](https://deep-foundation.github.io/logger/index.html)
 
