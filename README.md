@@ -9,76 +9,75 @@ A deep package that provides handlers to log insert/update/delete operations
 # Prerequisitions
 - Give permissions
 
+## Quick Start
+
+```ts
+const containTypeLinkId = await deep.id("@deep-foundation/core", "Contain");
+
+const handleInsertTypeLinkId = await deep.id(
+  "@deep-foundation/core",
+  "HandleInsert"
+);
+const handleUpdateTypeLinkId = await deep.id(
+  "@deep-foundation/core",
+  "HandleUpdate"
+);
+const handleDeleteTypeLinkId = await deep.id(
+  "@deep-foundation/core",
+  "HandleDelete"
+);
+
+const insertHandlerLinkId = await deep.id(
+  "@deep-foundation/logger",
+  "InsertHandler"
+);
+const updateHandlerLinkId = await deep.id(
+  "@deep-foundation/logger",
+  "UpdateHandler"
+);
+const deleteHandlerLinkId = await deep.id(
+  "@deep-foundation/logger",
+  "DeleteHandler"
+);
+
+const myTypeLinkId = await deep.id(deep.linkId, "MyType");
+const containerLinkId = deep.linkId;
+
+const reservedLinkIds = await deep.reserve(1);
+
+const handleLinkId = reservedLinkIds.pop();
+
+await deep.serial({
+  operations: [
+    {
+      type: "insert",
+      table: "links",
+      objects: {
+        id: handleLinkId,
+        type_id:
+          handleInsertTypeLinkId /* handleUpdateTypeLinkId, handleDeleteTypeLinkId */,
+        from_id: myTypeLinkId,
+        to_id:
+          insertHandlerLinkId /* updateHandlerLinkId, deleteHandlerLinkId */,
+      },
+    },
+    {
+      type: "insert",
+      table: "links",
+      objects: {
+        type_id: containTypeLinkId,
+        from_id: containerLinkId,
+        to_id: handleLinkId,
+      },
+    },
+  ],
+});
+
+```
+
 # Usage
 Insert a link of type `Handle(Insert|Update|Delete)` from your type that should be handled to the accroding handler `(Insert|Update|Delete)Handler` from this package
 
-- ## [By using library of this package](https://deep-foundation.github.io/logger/functions/insertHandle.html#md:insert-a-handle-link)
-
-
-- ## Manually
-  ```ts
-  const containTypeLinkId = await deep.id("@deep-foundation/core", "Contain");
-  
-  const handleInsertTypeLinkId = await deep.id(
-    "@deep-foundation/core",
-    "HandleInsert"
-  );
-  const handleUpdateTypeLinkId = await deep.id(
-    "@deep-foundation/core",
-    "HandleUpdate"
-  );
-  const handleDeleteTypeLinkId = await deep.id(
-    "@deep-foundation/core",
-    "HandleDelete"
-  );
-  
-  const insertHandlerLinkId = await deep.id(
-    "@deep-foundation/logger",
-    "InsertHandler"
-  );
-  const updateHandlerLinkId = await deep.id(
-    "@deep-foundation/logger",
-    "UpdateHandler"
-  );
-  const deleteHandlerLinkId = await deep.id(
-    "@deep-foundation/logger",
-    "DeleteHandler"
-  );
-  
-  const myTypeLinkId = await deep.id(deep.linkId, "MyType");
-  const containerLinkId = deep.linkId;
-  
-  const reservedLinkIds = await deep.reserve(1);
-  
-  const handleLinkId = reservedLinkIds.pop();
-  
-  await deep.serial({
-    operations: [
-      {
-        type: "insert",
-        table: "links",
-        objects: {
-          id: handleLinkId,
-          type_id:
-            handleInsertTypeLinkId /* handleUpdateTypeLinkId, handleDeleteTypeLinkId */,
-          from_id: myTypeLinkId,
-          to_id:
-            insertHandlerLinkId /* updateHandlerLinkId, deleteHandlerLinkId */,
-        },
-      },
-      {
-        type: "insert",
-        table: "links",
-        objects: {
-          type_id: containTypeLinkId,
-          from_id: containerLinkId,
-          to_id: handleLinkId,
-        },
-      },
-    ],
-  });
-  
-  ```
 
 ## Result
 ### Insert
