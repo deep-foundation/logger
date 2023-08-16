@@ -23,7 +23,7 @@ export async function getHandleInsertSerialOperations(
     containValue,
   } = param;
 
-  let linkIds = param.linkIds;
+  let linkIds = param.reservedLinkIds;
   if (!linkIds) {
     const reservedLinkIds = await deep.reserve(2);
     linkIds = {
@@ -77,7 +77,7 @@ export type GetHandleInsertSerialOperations = {
    * DeepClient instance
    */
   deep: DeepClient;
-  linkIds?: {
+  reservedLinkIds?: {
     /**
      * Link id of the handle that will be inserted
      */
@@ -113,4 +113,23 @@ export type GetHandleInsertSerialOperations = {
   handlerLinkId: number;
 };
 
-
+type GetReservedLinkIdsOptions = {
+  reservedLinkIds: GetHandleInsertSerialOperations['reservedLinkIds'];
+  deep: DeepClient;
+}
+type GetReservedLinkIdsResult = Required<Exclude<GetHandleInsertSerialOperations['reservedLinkIds'], undefined>>;
+async function getReservedLinkIds(options: GetReservedLinkIdsOptions): Promise<GetReservedLinkIdsResult> {
+  const result: GetReservedLinkIdsResult = {
+    containLinkId: 0,
+    handleLinkId: 0
+  }
+  const linkIdsToReserveCount = Object.keys(result).length - Object.keys(options.reservedLinkIds ?? {}).length;
+  let reservedLinkIds: number[] = [];
+  if(linkIdsToReserveCount > 0) {
+    reservedLinkIds = await options.deep.reserve(linkIdsToReserveCount);
+  }
+  return {
+    containLinkId: options.reservedLinkIds?.containLinkId ?? reservedLinkIds.pop()!,
+    handleLinkId: options.reservedLinkIds?.handleLinkId ?? reservedLinkIds.pop()!,
+  }
+}
