@@ -83,6 +83,7 @@ Insert a link of type `Handle(Insert|Update|Delete)` from your type that should 
 ### Insert
 - LogInsert with string value that contains timestamp in milliseconds
 - LogId from LogInsert to newLink.link
+- LogTimestamp from LogInsert to LogInsert
 - LogType from LogINsert to newLink.type
 - LogFrom from LogInsert to newLink.from
 - LogTo from LogInsert to newLink.to
@@ -90,6 +91,7 @@ Insert a link of type `Handle(Insert|Update|Delete)` from your type that should 
 ### Update
 - LogInsert with string value that contains timestamp in milliseconds
 - LogId from LogInsert to newLink.link
+- LogTimestamp from LogUpdate to LogUpdate
 - LogType from LogINsert to newLink.type
 - LogFrom from LogInsert to newLink.from
 - LogTo from LogInsert to newLink.to
@@ -98,6 +100,7 @@ Insert a link of type `Handle(Insert|Update|Delete)` from your type that should 
 ### Delete
 - LogInsert with string value that contains timestamp in milliseconds
 - LogId from LogInsert to newLink.link
+- LogTimestamp from LogDelete to LogDelete
 - LogType from LogINsert to newLink.type
 - LogFrom from LogInsert to newLink.from
 - LogTo from LogInsert to newLink.to
